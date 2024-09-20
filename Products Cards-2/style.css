@@ -1,0 +1,87 @@
+body{
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #87bfff;
+    height: 100vh;
+}
+
+.card{
+    height: 490px;
+    width: 350px;
+    background: white;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.card img{
+    overflow: visible;
+    width: 450px;
+    height: 450px;
+    background: transparent;
+    transform: rotate(15deg) translateX(20px);
+}
+
+.card p {
+    text-align: left;
+    text-overflow: wrap;
+    padding: 20px;
+}
+
+.card button{
+    height: 55px;
+    border-radius: 5px;
+    background: #87bfff;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    margin-bottom: 20px;
+}
+
+.card button:hover{
+    cursor: pointer;
+    background: #68aefe;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover{
+    cursor: pointer;
+    animation: scaleup 1s forwards;
+    > img {
+        animation: rotate 1s forwards;
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(15deg) translateX(20px);
+    }
+    50% {
+        transform: rotate(5deg) translateX(20px) scale(1.1);
+    }
+    100% {
+        transform: rotate(15deg) translateX(20px);
+    }
+}
+
+@keyframes scaleup {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.3), 0 0 30px rgba(0, 0, 0, 0.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
